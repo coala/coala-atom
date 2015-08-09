@@ -1,5 +1,5 @@
 [Default]
-files = **/*.coffee
+files = lib/*.coffee
 bears = SpaceConsistencyBear, LineLengthBear
 use_spaces = True
 max_line_length = 80
