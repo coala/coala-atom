@@ -1,0 +1,21 @@
+{
+  "name": "coala-atom",
+  "main": "./lib/main",
+  "version": "0.0.1",
+  "description": "Run coala's code analysis on a file inside atom",
+  "repository": "https://github.com/coala-analyzer/coala-atom",
+  "license": "GNU AGPL",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+    "atom-linter": "^1.0.0"
+  },
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
+  }
+}
