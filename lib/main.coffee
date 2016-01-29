@@ -23,7 +23,7 @@ module.exports =
         parameters.push('--settings')
         parameters.push("format_str=" +
                         "R-{line}-{severity}-{origin}:{message}")
-        return helpers.exec(atom.config.get('coala-atom.executable'),
+        return helpers.exec(atom.config.get('coala.executable'),
                             parameters,
                             {cwd: path.dirname(filePath)})
                       .then (result) ->
