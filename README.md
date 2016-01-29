@@ -1,5 +1,37 @@
-coala-atom
-==========
+ABOUT
+=====
 
-This repository holds a package that provides coala's code analysis for atom.
-It is maintained by Abdeali Kothari <abdealikothari@gmail.com>.
+`coala-atom` offers a plugin for the atom editor to use the code analysis
+software [coala](https://github.com/coala-analyzer/coala-atom) inside the
+editor.
+
+INSTALLATION
+============
+
+To install `coala-atom`, clone this repository to atom's Package directotry.
+The Package directory can be found by opening "Settings > Install" or with the
+"Settings View: Install Packages and Views" option. it's written on the top.
+By default, it would be `~/.atom/packages`
+
+This packages also requires the base linter provided by atom at
+[linter](https://github.com/atom-community/linter). It can also be got using
+[apm](https://atom.io/packages/linter), or by using
+the package manager inside atom.
+
+AUTHORS
+=======
+
+Abdeali J Kothari - <abdealikothari@gmail.com>
+Lasse Schuirmann - <lasse.schuirmann@gmail.com>
+
+If you have any questions regarding the plugin, don't hesitate
+to create an issue or send us an email.
+
+LICENSE
+=======
+
+[![AGPL](https://img.shields.io/github/license/coala-analyzer/coala.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
+
+This code falls under the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of
+the License, or (at your option) any later version.
