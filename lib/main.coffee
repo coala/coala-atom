@@ -19,7 +19,6 @@ module.exports =
         filePath = textEditor.getPath()
         parameters = []
         parameters.push('--find-config')
-        parameters.push('-S=autoapply=false')
         parameters.push('--files=' + filePath)
         parameters.push('--settings')
         parameters.push("format_str=" +
