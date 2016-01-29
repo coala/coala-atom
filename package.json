@@ -1,5 +1,5 @@
 {
-  "name": "coala-atom",
+  "name": "coala",
   "main": "./lib/main",
   "version": "0.0.1",
   "description": "Run coala's code analysis on a file inside atom",
