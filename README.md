@@ -1,22 +1,16 @@
 ABOUT
 =====
 
-`coala-atom` offers a plugin for the atom editor to use the code analysis
-software [coala](https://github.com/coala-analyzer/coala-atom) inside the
+This package offers a plugin for the atom editor to use the code analysis
+software [coala](https://github.com/coala-analyzer/coala) inside the
 editor.
 
 INSTALLATION
 ============
 
-To install `coala-atom`, clone this repository to atom's Package directotry.
-The Package directory can be found by opening "Settings > Install" or with the
-"Settings View: Install Packages and Views" option. it's written on the top.
-By default, it would be `~/.atom/packages`
-
-This packages also requires the base linter provided by atom at
-[linter](https://github.com/atom-community/linter). It can also be got using
-[apm](https://atom.io/packages/linter), or by using
-the package manager inside atom.
+ 1. Install [coala](https://github.com/coala-analyzer/coala)
+ 2. Install the base [linter](https://atom.io/packages/linter) in atom
+ 3. `apm install coala`
 
 AUTHORS
 =======
