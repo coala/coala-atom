@@ -13,6 +13,7 @@ MANIFEST
 _build
 coverage.xml
 .htmlreport
+*.log
 *.orig
 *.diff
 *.kdev4
