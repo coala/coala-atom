@@ -12,17 +12,18 @@ module.exports =
     # in coala the levels are: ["DEBUG", "INFO", "WARNING", "ERROR"]
     log_levels = ["Trace", "Info", "Warning", "Error"]
     provider =
-      grammarScopes: ['source.python']
+      grammarScopes: ['*']
       scope: 'file'
       lintOnFly: true
       lint: (textEditor)->
         filePath = textEditor.getPath()
         parameters = []
         parameters.push('--find-config')
+        parameters.push('-S=autoapply=false')
         parameters.push('--files=' + filePath)
         parameters.push('--settings')
         parameters.push("format_str=" +
-                        "R-{line_nr}-{severity}-{origin}:{message}")
+                        "R-{line}-{severity}-{origin}:{message}")
         return helpers.exec(atom.config.get('coala-atom.executable'),
                             parameters,
                             {cwd: path.dirname(filePath)})
