@@ -9,14 +9,15 @@ INSTALLATION
 ============
 
  1. Install [coala](https://github.com/coala-analyzer/coala)
- 2. Install the base [linter](https://atom.io/packages/linter) in atom
- 3. `apm install coala`
+ 2. `apm install coala` or use the atom GUI
+
+    Note: If the `linter` atom package is not currently installed, it will be installed for you.
 
 AUTHORS
 =======
 
-Abdeali J Kothari - <abdealikothari@gmail.com>
-Lasse Schuirmann - <lasse.schuirmann@gmail.com>
+ - Abdeali J Kothari - <abdealikothari@gmail.com>
+ - Lasse Schuirmann - <lasse.schuirmann@gmail.com>
 
 If you have any questions regarding the plugin, don't hesitate
 to create an issue or send us an email.
