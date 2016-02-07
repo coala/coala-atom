@@ -5,6 +5,7 @@ module.exports =
       default: 'coala-format'
 
   activate: ->
+    require('atom-package-deps').install()
 
   provideLinter: ->
     helpers = require('atom-linter')
