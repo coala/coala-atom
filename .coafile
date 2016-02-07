@@ -1,5 +1,18 @@
-[Default]
+[CoffeeScript]
 files = lib/*.coffee
-bears = SpaceConsistencyBear, LineLengthBear
+bears = SpaceConsistencyBear, LineLengthBear, CoffeeLintBear
 use_spaces = True
 max_line_length = 80
+
+[JSON]
+files = *.json
+bears = JSONFormatBear
+json_sort = false
+tab_width = 2
+
+[Markdown]
+files = *.md
+bears = MarkdownBear, AlexBear
+
+[Git]
+bears = GitCommitBear
