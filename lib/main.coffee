@@ -2,6 +2,7 @@
 helpers = require('atom-linter')
 path = require('path')
 
+COALA_MIN_VERSION = '0.3.0'
 module.exports =
   config:
     executable:
@@ -16,6 +17,15 @@ module.exports =
     @subscriptions.add atom.config.observe 'coala.executable',
       (newExecutableValue) =>
         @executable = newExecutableValue
+
+    # Check version of coala
+    version = require('child_process').spawn(@executable, ['--version'])
+    version.stdout.on 'data', (data) ->
+      if data <= COALA_MIN_VERSION
+        atom.notifications.addError \
+          'You are using an old version of coala !',
+          'detail': 'Please upgrade your version of coala.\n' +
+                    'Minimum version required: ' + COALA_MIN_VERSION
 
   deactivate: ->
     @subscriptions.dispose()
