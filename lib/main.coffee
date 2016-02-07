@@ -1,16 +1,27 @@
+{CompositeDisposable} = require 'atom'
+helpers = require('atom-linter')
+path = require('path')
+
 module.exports =
   config:
     executable:
       type: 'string'
       default: 'coala-format'
+      description: 'Command or path to executable.'
 
   activate: ->
-    require('atom-package-deps').install()
+    require('atom-package-deps').install('coala')
+
+    @subscriptions = new CompositeDisposable
+    @subscriptions.add atom.config.observe 'coala.executable',
+      (newExecutableValue) =>
+        @executable = newExecutableValue
+
+  deactivate: ->
+    @subscriptions.dispose()
 
   provideLinter: ->
-    helpers = require('atom-linter')
-    path = require('path')
-    # in coala the levels are: ["DEBUG", "INFO", "WARNING", "ERROR"]
+    # In coala the levels are: ["DEBUG", "INFO", "WARNING", "ERROR"]
     log_levels = ["Trace", "Info", "Warning", "Error"]
     provider =
       grammarScopes: ['*']
@@ -24,7 +35,7 @@ module.exports =
         parameters.push('--settings')
         parameters.push("format_str=" +
                         "R-{line}-{severity}-{origin}:{message}")
-        return helpers.exec(atom.config.get('coala.executable'),
+        return helpers.exec(@executable,
                             parameters,
                             {cwd: path.dirname(filePath)})
                       .then (result) ->
