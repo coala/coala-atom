@@ -23,4 +23,5 @@ dependencies:
 
 test:
   override:
+    - apm test
     - coala-ci

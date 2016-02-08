@@ -1,0 +1,4 @@
+[Default]
+files = **/*
+bears = LineLengthBear
+max_line_length = 80
