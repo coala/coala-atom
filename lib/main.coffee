@@ -22,6 +22,12 @@ module.exports =
              '-(?<type>\\d+)-(?<message>.*)' +
              '\\r?[\\n$]'
 
+    @resultSeverity = [
+      "Info",    # Result severity 0 = Info
+      "Normal",  # Result severity 1 = Normal
+      "Major"    # Result severity 2 = Major
+    ]
+
     # Check version of coala
     version = require('child_process').spawn(@executable, ['--version'])
     version.stdout.on 'data', (data) ->
@@ -35,11 +41,6 @@ module.exports =
     @subscriptions.dispose()
 
   provideLinter: ->
-    logLevels = [
-      "Info",    # Result severity = 0 = Info
-      "Warning", # Result severity = 1 = Normal
-      "Error"    # Result severity = 2 = Major
-    ]
     provider =
       grammarScopes: ['*']
       scope: 'file'
@@ -59,6 +60,6 @@ module.exports =
                             {cwd: path.dirname(filePath)})
                       .then (result) =>
           helpers.parse(result, @regex, {filePath: filePath})
-            .map (lintIssue) ->
-              lintIssue.type = logLevels[lintIssue.type]
+            .map (lintIssue) =>
+              lintIssue.type = @resultSeverity[lintIssue.type]
               lintIssue

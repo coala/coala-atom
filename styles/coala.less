@@ -1,0 +1,48 @@
+@import "ui-variables";
+atom-text-editor::shadow .linter-highlight, .linter-highlight {
+  &.info {
+    /* Style for Message Badges */
+    &:not(.line-number) {
+      background-color: @background-color-info;
+      color: white;
+    }
+    /* Style for Gutter */
+    .linter-gutter {
+      color: @background-color-info;
+    }
+    /* Style for the text editor highlight */
+    .region {
+      border-bottom: 1px dashed @background-color-info;
+    }
+  }
+  &.normal {
+    /* Style for Message Badges */
+    &:not(.line-number) {
+      background-color: @background-color-warning;
+      color: white;
+    }
+    /* Style for Gutter */
+    .linter-gutter {
+      color: @background-color-warning;
+    }
+    /* Style for the text editor highlight */
+    .region {
+      border-bottom: 1px dashed @background-color-warning;
+    }
+  }
+  &.major {
+    /* Style for Message Badges */
+    &:not(.line-number) {
+      background-color: @background-color-error;
+      color: white;
+    }
+    /* Style for Gutter */
+    .linter-gutter {
+      color: @background-color-error;
+    }
+    /* Style for the text editor highlight */
+    .region {
+      border-bottom: 1px dashed @background-color-error;
+    }
+  }
+}
