@@ -41,6 +41,7 @@ module.exports =
 
   provideLinter: ->
     provider =
+      name: 'coala'
       grammarScopes: ['*']
       scope: 'file'
       lintOnFly: true
