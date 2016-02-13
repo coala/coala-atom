@@ -2,7 +2,7 @@
 helpers = require 'atom-linter'
 path = require 'path'
 
-COALA_MIN_VERSION = '0.3.0'
+COALA_MIN_VERSION = '0.4.1.dev'
 module.exports =
   config:
     executable:
@@ -49,7 +49,7 @@ module.exports =
         filePath = textEditor.getPath()
         parameters = []
         parameters.push '--find-config'
-        parameters.push '--files=' + filePath
+        parameters.push '--limit-files=' + filePath
         parameters.push '--settings'
         parameters.push 'format_str=' +
                         'R-{line}:{column}-{end_line}:{end_column}' +

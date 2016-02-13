@@ -1,4 +1,9 @@
-[Default]
-files = **/*
+[Python]
+files = files/*.py
+bears = LineLengthBear
+max_line_length = 80
+
+[Coffee]
+files = files/*.coffee
 bears = LineLengthBear
 max_line_length = 80
