@@ -1,12 +1,12 @@
 # ABOUT
 
 This package offers a plugin for the atom editor to use the code analysis
-software [coala](https://github.com/coala-analyzer/coala) inside the
+software [coala](https://github.com/coala/coala) inside the
 editor.
 
 # INSTALLATION
 
-1.  Install [coala](https://github.com/coala-analyzer/coala)
+1.  Install [coala](https://github.com/coala/coala)
 2.  `apm install coala` or use the atom GUI
 
     Note:
@@ -23,7 +23,7 @@ to create an issue or send us an email.
 
 # LICENSE
 
-[![AGPL](https://img.shields.io/github/license/coala-analyzer/coala.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
+[![AGPL](https://img.shields.io/github/license/coala/coala.svg)](https://www.gnu.org/licenses/agpl-3.0.html)
 
 This code falls under the GNU Affero General Public License as
 published by the Free Software Foundation, either version 3 of
