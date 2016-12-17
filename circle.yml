@@ -12,7 +12,7 @@ dependencies:
     - pyenv local 3.4.3
 
     # Install coala
-    - pip install --pre -U coala
+    - pip install --pre -U coala-bears
     - coala --version
 
     # Install plugin
