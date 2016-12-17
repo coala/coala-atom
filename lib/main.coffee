@@ -19,8 +19,7 @@ module.exports =
 
     @regex = 'R-(?<lineStart>\\d+|None):(?<colStart>\\d+|None)' +
              '-(?<lineEnd>\\d+|None):(?<colEnd>\\d+|None)' +
-             '-(?<type>\\d+)-(?<message>.*)' +
-             '\\r?[\\n$]'
+             '-(?<type>\\d+)-(?<message>.*)';
 
     @resultSeverity = [
       'Info',    # Result severity 0 = Info
