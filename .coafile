@@ -12,7 +12,7 @@ tab_width = 2
 
 [Markdown]
 files = *.md
-bears = MarkdownBear, AlexBear
+bears = AlexBear
 
 [Git]
 bears = GitCommitBear
