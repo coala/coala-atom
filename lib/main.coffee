@@ -7,7 +7,7 @@ module.exports =
   config:
     executable:
       type: 'string'
-      default: 'coala-format'
+      default: 'coala'
       description: 'Command or path to executable.'
 
   activate: ->
@@ -48,6 +48,7 @@ module.exports =
       lint: (textEditor) =>
         filePath = textEditor.getPath()
         parameters = []
+        parameters.push '--format'
         parameters.push '--find-config'
         parameters.push '--limit-files=' + filePath
         parameters.push '--settings'
