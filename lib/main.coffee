@@ -19,8 +19,7 @@ module.exports =
 
     @regex = 'R-(?<lineStart>\\d+|None):(?<colStart>\\d+|None)' +
              '-(?<lineEnd>\\d+|None):(?<colEnd>\\d+|None)' +
-             '-(?<type>\\d+)-(?<message>.*)' +
-             '\\r?[\\n$]'
+             '-(?<type>\\d+)-(?<message>.*)'
 
     @resultSeverity = [
       'Info',    # Result severity 0 = Info
@@ -48,29 +47,16 @@ module.exports =
       lint: (textEditor) =>
         filePath = textEditor.getPath()
         parameters = []
-        parameters.push '--json'
         parameters.push '--find-config'
         parameters.push '--limit-files=' + filePath
-        console.log(@executable)
-        for i in parameters
-          console.log(i)
+        parameters.push '--format=' +
+                        'R-{line}:{column}-{end_line}:{end_column}' +
+                        '-{severity}-{origin}:{message}'
         return helpers.exec(@executable,
                             parameters,
                             {cwd: path.dirname(filePath)})
                       .then (result) =>
-          
-          resultsObj = JSON.parse(result)
-          console.log(resultsObj.results.default)
-          #resultsObj.results.default.map (lintIssue) =>
-          #  console.log(lintIssue)
-          #  lintIssue.type = @resultSeverity[lintIssue.type]
-          #  lintIssue
-          #resultsObj.results
-          #result.results.default
-          ##
-          #console.log("the result is " + result)
-          #console.log(result)
-          #helpers.parse result, @regex, {filePath: filePath}
-            #.map (lintIssue) =>
-              #lintIssue.type = @resultSeverity[lintIssue.type]
-              #lintIssue
+          helpers.parse result, @regex, {filePath: filePath}
+            .map (lintIssue) =>
+              lintIssue.type = @resultSeverity[lintIssue.type]
+              lintIssue
