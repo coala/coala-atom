@@ -48,18 +48,29 @@ module.exports =
       lint: (textEditor) =>
         filePath = textEditor.getPath()
         parameters = []
-        parameters.push '--format'
+        parameters.push '--json'
         parameters.push '--find-config'
         parameters.push '--limit-files=' + filePath
-        parameters.push '--settings'
-        parameters.push 'format_str=' +
-                        'R-{line}:{column}-{end_line}:{end_column}' +
-                        '-{severity}-{origin}:{message}'
+        console.log(@executable)
+        for i in parameters
+          console.log(i)
         return helpers.exec(@executable,
                             parameters,
                             {cwd: path.dirname(filePath)})
                       .then (result) =>
-          helpers.parse result, @regex, {filePath: filePath}
-            .map (lintIssue) =>
-              lintIssue.type = @resultSeverity[lintIssue.type]
-              lintIssue
+          
+          resultsObj = JSON.parse(result)
+          console.log(resultsObj.results.default)
+          #resultsObj.results.default.map (lintIssue) =>
+          #  console.log(lintIssue)
+          #  lintIssue.type = @resultSeverity[lintIssue.type]
+          #  lintIssue
+          #resultsObj.results
+          #result.results.default
+          ##
+          #console.log("the result is " + result)
+          #console.log(result)
+          #helpers.parse result, @regex, {filePath: filePath}
+            #.map (lintIssue) =>
+              #lintIssue.type = @resultSeverity[lintIssue.type]
+              #lintIssue
