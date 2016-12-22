@@ -3,10 +3,12 @@ dependencies:
     - ~/.pyenv/versions/3.4.3
     - ~/coala-atom/node_modules
   pre:
+    # Install atom dependencies
+    - sudo apt-get update
+    - sudo apt-get install gvfs-bin
     # Install atom
     - curl -L -o atom.deb https://atom.io/download/deb
-    - sudo dpkg --install atom.deb || true
-    - sudo apt-get -f install
+    - sudo dpkg --install atom.deb
 
     # Set python version
     - pyenv local 3.4.3
