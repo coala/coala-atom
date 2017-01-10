@@ -8,7 +8,7 @@ max_line_length = 80
 files = *.json
 bears = JSONFormatBear
 json_sort = false
-tab_width = 2
+indent_size = 2
 
 [Markdown]
 files = *.md
