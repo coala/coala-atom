@@ -26,4 +26,4 @@ dependencies:
 test:
   override:
     - apm test
-    - coala --ci
+    - coala --non-interactive
