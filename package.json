@@ -1,7 +1,7 @@
 {
   "name": "coala",
   "main": "./lib/main",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Run coala's code analysis on a file inside atom",
   "repository": "https://github.com/coala/coala-atom",
   "license": "AGPL-3.0",
