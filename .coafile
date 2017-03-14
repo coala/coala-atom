@@ -4,6 +4,12 @@ bears = SpaceConsistencyBear, LineLengthBear, CoffeeLintBear
 use_spaces = True
 max_line_length = 80
 
+[PYTHON]
+files = **.py
+bears = PEP8Bear
+
+default_actions = PEP8Bear: ApplyPatchAction
+
 [JSON]
 files = *.json
 bears = JSONFormatBear
