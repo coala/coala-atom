@@ -10,7 +10,7 @@ editor.
 2.  `apm install coala` or use the atom GUI
 
     Note:
-     * If the `linter` atom package is not currently installed, it will be installed for you.
+     * If the [linter](https://github.com/steelbrain/linter) atom package is not currently installed, it will be installed for you.
      * If you are behind a firewall and seeing SSL errors when installing packages, you may find the fix at [atom manual](http://flight-manual.atom.io/getting-started/sections/installing-atom/#setting-up-a-proxy)
 
 # AUTHORS
