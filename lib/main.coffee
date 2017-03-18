@@ -2,7 +2,7 @@
 helpers = require 'atom-linter'
 path = require 'path'
 
-COALA_MIN_VERSION = '0.9.1'
+COALA_MIN_VERSION = '0.10.0'
 module.exports =
   config:
     executable:
