@@ -2,7 +2,7 @@
 
 This package offers a plugin for the atom editor to use the code analysis
 software [coala](https://github.com/coala/coala) inside the
-editor.
+text-editor.
 
 # INSTALLATION
 
