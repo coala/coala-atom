@@ -2,16 +2,17 @@
 
 This package offers a plugin for the atom editor to use the code analysis
 software [coala](https://github.com/coala/coala) inside the
-text-editor.
+editor..
 
 # INSTALLATION
 
 1.  Install [coala](https://github.com/coala/coala)
-2.  `apm install coala` or use the atom GUI
+2.  `apm install coala` 
 
     Note:
      * If the `linter` atom package is not currently installed, it will be installed for you.
      * If you are behind a firewall and seeing SSL errors when installing packages, you may find the fix at [atom manual](http://flight-manual.atom.io/getting-started/sections/installing-atom/#setting-up-a-proxy)
+Add a couple lines to test here`
 
 # AUTHORS
 
