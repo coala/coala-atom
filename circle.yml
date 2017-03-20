@@ -3,17 +3,19 @@ dependencies:
     - ~/.pyenv/versions/3.4.3
     - ~/coala-atom/node_modules
   pre:
-    # Install atom dependencies
+    # Install  dependencies
+    - sudo apt-get install libnotify4
     - sudo apt-get update
     - sudo apt-get install gvfs-bin
     # Install atom
     - curl -L -o atom.deb https://atom.io/download/deb
     - sudo dpkg --install atom.deb
-
+    - sudo apt-get -f install
     # Set python version
     - pyenv local 3.4.3
 
     # Install coala
+    - pip install --upgrade pip
     - pip install --pre -U coala-bears
     - coala --version
 
