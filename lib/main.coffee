@@ -22,9 +22,9 @@ module.exports =
              '-(?<type>\\d+)-(?<message>.*)'
 
     @resultSeverity = [
-      'info',    # Info
+      'info',     # Info
       'warning',  # Normal
-      'error'    # Major
+      'error'     # Major
     ]
 
     # Check version of coala
@@ -43,7 +43,7 @@ module.exports =
       name: 'coala'
       grammarScopes: ['*']
       scope: 'file'
-      lintsOnChange: true
+      lintsOnChange: false
       lint: (textEditor) =>
         filePath = textEditor.getPath()
         parameters = []
