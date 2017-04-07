@@ -45,18 +45,19 @@ describe('The coala provider for Linter', () => {
     it('verifies that message', () =>
       waitsForPromise(() =>
         lint(editor).then(messages => {
-          expect(messages[0].type).toBeDefined();
-          expect(messages[0].type).toEqual('Normal');
+          expect(messages[0].severity).toBeDefined();
+          expect(messages[0].severity).toEqual('warning');
           expect(messages[0].html).not.toBeDefined();
-          expect(messages[0].text).toBeDefined();
-          expect(messages[0].text).toEqual(
+          expect(messages[0].excerpt).toBeDefined();
+          expect(messages[0].excerpt).toEqual(
             'LineLengthBear:Line is longer than allowed. (103 > 80)');
-          expect(messages[0].filePath).toBeDefined();
-          expect(messages[0].filePath).toMatch(
+          expect(messages[0].location).toBeDefined();
+          expect(messages[0].location.file).toBeDefined();
+          expect(messages[0].location.file).toMatch(
             /.+spec[\\\/]files[\\\/]bad\.py$/);
-          expect(messages[0].range).toBeDefined();
-          expect(messages[0].range.length).toEqual(2);
-          expect(messages[0].range).toEqual([[0, 80], [0, 103]]);
+          expect(messages[0].location.position).toBeDefined();
+          expect(messages[0].location.position.length).toEqual(2);
+          expect(messages[0].location.position).toEqual([[0, 80], [0, 103]]);
         })
       )
     );

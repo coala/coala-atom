@@ -22,9 +22,9 @@ module.exports =
              '-(?<type>\\d+)-(?<message>.*)'
 
     @resultSeverity = [
-      'Info',    # Result severity 0 = Info
-      'Normal',  # Result severity 1 = Normal
-      'Major'    # Result severity 2 = Major
+      'info',     # Info
+      'warning',  # Normal
+      'error'     # Major
     ]
 
     # Check version of coala
@@ -43,12 +43,12 @@ module.exports =
       name: 'coala'
       grammarScopes: ['*']
       scope: 'file'
-      lintOnFly: true
+      lintsOnChange: false
       lint: (textEditor) =>
         filePath = textEditor.getPath()
         parameters = []
         parameters.push '--find-config'
-        parameters.push '--limit-files=' + filePath
+        parameters.push '--limit-files=' + path.basename(filePath)
         parameters.push '--format=' +
                         'R-{line}:{column}-{end_line}:{end_column}' +
                         '-{severity}-{origin}:{message}'
@@ -58,5 +58,10 @@ module.exports =
                       .then (result) =>
           helpers.parse result, @regex, {filePath: filePath}
             .map (lintIssue) =>
-              lintIssue.type = @resultSeverity[lintIssue.type]
+              lintIssue =
+                severity: @resultSeverity[lintIssue.type]
+                excerpt: lintIssue.text
+                location:
+                  file: lintIssue.filePath
+                  position: lintIssue.range
               lintIssue
