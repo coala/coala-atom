@@ -17,8 +17,8 @@ editor.
 
 # AUTHORS
 
-*   Abdeali J Kothari - <mailto:abdealikothari@gmail.com>
-*   Lasse Schuirmann - <mailto:lasse.schuirmann@gmail.com>
+- Abdeali J Kothari - <mailto:abdealikothari@gmail.com>
+- Lasse Schuirmann - <mailto:lasse.schuirmann@gmail.com>
 
 If you have any questions regarding the plugin, don't hesitate
 to create an issue or send us an email.
