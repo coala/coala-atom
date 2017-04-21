@@ -45,6 +45,15 @@ module.exports =
       scope: 'file'
       lintsOnChange: false
       lint: (textEditor) =>
+        fix = _ref.fix
+        textBuffer = textEditor.getBuffer()
+        linterFix = null
+        if fix
+          fixRange = new (_atom.Range)(textBuffer.positionForCharacterIndex
+          (fix.range[0]), textBuffer.positionForCharacterIndex(fix.range[1]))
+          linterFix =
+            range: fixRange
+            newText: fix.text
         filePath = textEditor.getPath()
         parameters = []
         parameters.push '--find-config'
