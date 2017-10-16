@@ -1,9 +1,10 @@
+---
 dependencies:
   cache_directories:
     - ~/.pyenv/versions/3.4.3
     - ~/coala-atom/node_modules
     - ~/nltk_data
-    
+
   pre:
     # Install  dependencies
     - sudo apt-get install libnotify4
@@ -31,4 +32,3 @@ test:
   override:
     - apm test
     - coala --ci
-
