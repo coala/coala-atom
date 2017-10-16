@@ -22,3 +22,7 @@ bears = MarkdownBear, AlexBear
 
 [Git]
 bears = GitCommitBear
+
+[yml]
+bears = YAMLLintBear
+files = *.yml
