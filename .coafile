@@ -22,3 +22,8 @@ bears = MarkdownBear, AlexBear
 
 [Git]
 bears = GitCommitBear
+
+[YAML]
+files = **.yml
+bears = YAMLLintBear
+ignore = node_modules/**.yml
