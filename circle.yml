@@ -1,3 +1,7 @@
+machine:
+  node:
+    version: 6.11.5
+
 dependencies:
   cache_directories:
     - ~/.pyenv/versions/3.4.3
