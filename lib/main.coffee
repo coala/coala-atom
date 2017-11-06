@@ -46,6 +46,16 @@ module.exports =
       lintsOnChange: false
       lint: (textEditor) =>
         filePath = textEditor.getPath()
+        # Check if the project directory contains .coafile
+        check = helpers.exec(@executable,
+                             ['--find-config'],
+                             {cwd: path.dirname(filePath)}).then (result) ->
+          atom.notifications.addSuccess('Check completed').catch (error) ->
+            atom.notifications.addInfo \
+              'coala: Missing Dependencies!',
+              'detail': 'Project directory does not contain .coafile.\n
+                         Please provide a .coafile for using coala.\n
+                         Make sure coala-bears meet all dependencies.'
         parameters = []
         parameters.push '--find-config'
         parameters.push '--limit-files=' + path.basename(filePath)
