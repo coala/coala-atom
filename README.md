@@ -4,6 +4,8 @@ This package offers a plugin for the atom editor to use the code analysis
 software [coala](https://github.com/coala/coala) inside the
 editor.
 
+![coala Atom](./readme_assets/coalaatom.gif)
+
 # INSTALLATION
 
 1. Install [coala](https://github.com/coala/coala)
