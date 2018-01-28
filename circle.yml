@@ -12,7 +12,7 @@ dependencies:
     - pyenv --help
     - pyenv --version
     - pyenv local 3.4.3
-    - pip3 install coala-bears
+    - pip install coala-bears
     # Install  dependencies
     - sudo apt-get install libnotify4
     - sudo apt-get update
