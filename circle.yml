@@ -9,6 +9,10 @@ dependencies:
     - ~/nltk_data
     
   pre:
+    - pyenv --help
+    - pyenv --version
+    - pyenv local 3.4.3
+    - pip3 install coala-bears
     # Install  dependencies
     - sudo apt-get install libnotify4
     - sudo apt-get update
@@ -17,12 +21,12 @@ dependencies:
     - curl -L -o atom.deb https://atom.io/download/deb
     - sudo dpkg --install atom.deb
     - sudo apt-get -f install
+    # Set python version
+    - pyenv local 3.4.3
 
     # Install coala
-    - sudo apt-get update
-    - pip3 --V
-    # Installs pip3 over pip
-    - pip3 install --pre -U coala-bears
+    - pip install --upgrade pip
+    - pip install --pre -U coala-bears
     - coala --version
 
     # Install plugin
@@ -34,5 +38,5 @@ dependencies:
 test:
   override:
     - apm test
-    - coala --ci -L DEBUG
+    - coala --ci
 
