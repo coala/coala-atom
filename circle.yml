@@ -21,8 +21,9 @@ dependencies:
     - pyenv local 3.4.3
 
     # Install coala
-    - pip install --upgrade pip
-    - pip install --pre -U coala-bears
+    - sudo apt-get update
+    - sudo apt-get install python3-pip
+    - pip3 install coala-bears
     - coala --version
 
     # Install plugin
@@ -34,5 +35,5 @@ dependencies:
 test:
   override:
     - apm test
-    - coala --ci
+    - coala --ci -L DEBUG
 
