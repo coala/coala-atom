@@ -17,15 +17,12 @@ dependencies:
     - curl -L -o atom.deb https://atom.io/download/deb
     - sudo dpkg --install atom.deb
     - sudo apt-get -f install
-    # Set python version
-    - pyenv local 3.4.3
 
     # Install coala
     - sudo apt-get update
-    - sudo apt-get install python3-setuptools
+    - pip3 --V
     # Installs pip3 over pip
-    - sudo easy_install3 pip
-    - pip install --pre -U coala-bears
+    - pip3 install --pre -U coala-bears
     - coala --version
 
     # Install plugin
