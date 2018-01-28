@@ -9,6 +9,11 @@ dependencies:
     - ~/nltk_data
     
   pre:
+    - pyenv --help
+    - pyenv --version
+    - pyenv local 3.4.3
+    - pip install --upgrade pip
+    - pip install coala-bears
     # Install  dependencies
     - sudo apt-get install libnotify4
     - sudo apt-get update
