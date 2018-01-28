@@ -25,7 +25,7 @@ dependencies:
     - sudo apt-get install python3-setuptools
     # Installs pip3 over pip
     - sudo easy_install3 pip
-    - pip install coala-bears
+    - pip install --pre -U coala-bears
     - coala --version
 
     # Install plugin
