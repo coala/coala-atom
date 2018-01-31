@@ -33,7 +33,8 @@ module.exports =
         atom.notifications.addError \
           'You are using an old version of coala !',
           'detail': 'Please upgrade your version of coala.\n
-                     Minimum version required: ' + COALA_MIN_VERSION
+                     Minimum version required: ' + COALA_MIN_VERSION +
+                     '\nCurrent version: ' + result
 
   deactivate: ->
     @subscriptions.dispose()
