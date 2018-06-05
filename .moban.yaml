@@ -1,0 +1,15 @@
+overrides: coala.yaml
+
+name: coala-brackets
+description: coala extension for Brackets
+language: coffee
+gitignore_language: Node
+
+configuration:
+  template_dir:
+    - ../coala-mobans/templates/
+    - ../coala-mobans/assets/
+  configuration: .moban.yaml
+  configuration_dir: ../coala-mobans/
+targets:
+  - .gitignore: coala-gitignore.jj2
